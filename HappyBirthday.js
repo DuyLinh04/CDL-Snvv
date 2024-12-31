@@ -408,16 +408,20 @@ const backgroundAudio = document.getElementById('background-audio');
 const birthdayAudio = document.getElementById('birthday-audio');
 const birthdayDetails = document.getElementById('birthday-details');
 
-birthdayDetails.addEventListener('mouseenter', () => {
-    backgroundAudio.pause(); // Pause the background music
-    birthdayAudio.play(); // Play the birthday audio
-});
+// Hàm phát cả hai âm thanh
+function playBothAudios() {
+    if (backgroundAudio.paused) {
+        backgroundAudio.play(); // Phát nhạc nền nếu chưa phát
+    }
+    if (birthdayAudio.paused) {
+        birthdayAudio.play(); // Phát bài hát chúc mừng nếu chưa phát
+    }
+}
 
-birthdayDetails.addEventListener('mouseleave', () => {
-    birthdayAudio.pause();
-    birthdayAudio.currentTime = 0; // Reset the birthday audio to the start
-    backgroundAudio.play(); // Resume the background music
-});
+// Lắng nghe sự kiện click và touchstart trên phần tử
+birthdayDetails.addEventListener('click', playBothAudios);
+birthdayDetails.addEventListener('touchstart', playBothAudios);
+
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
 window.requestAnimFrame = ( function() {
