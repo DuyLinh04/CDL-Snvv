@@ -692,4 +692,18 @@ canvas.addEventListener( 'mouseup', function( e ) {
 window.onload = loop;
 
 
+function playAudio() {
+	var backgroundAudio = document.getElementById('background-audio');
+	var birthdayAudio = document.getElementById('birthday-audio');
+	
+	backgroundAudio.play(); // Phát nhạc nền
+	birthdayAudio.play(); // Phát nhạc sinh nhật
+}
+document.body.addEventListener('touchstart', function() {
+	var backgroundAudio = document.getElementById('background-audio');
+	var birthdayAudio = document.getElementById('birthday-audio');
 
+	// Phát âm thanh khi người dùng chạm vào màn hình
+	backgroundAudio.play();
+	birthdayAudio.play();
+}, { once: true }); // Sự kiện chỉ chạy một lần
