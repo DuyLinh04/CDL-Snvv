@@ -45,4 +45,4 @@ $("body").on("click", function (e) {
 });
 setTimeout(function() {
     window.location.href = "HappyBirthday.html";
-}, 3000);
+}, 5000);

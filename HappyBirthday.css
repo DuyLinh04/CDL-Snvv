@@ -5,8 +5,11 @@ canvas {
 }
 
 body {
+  display: flex;
+  gap: 50px;
 	overflow: hidden;
-    background-color: #171414;
+  background-color: #544a4a;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 /* Phiên bản tiêu chuẩn */
@@ -396,7 +399,7 @@ h4 {
   .card {
     width: 95%;
     right: 2%;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%) perspective(1000px);
   }
 
